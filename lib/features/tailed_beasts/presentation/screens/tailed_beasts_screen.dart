@@ -1,0 +1,47 @@
+import 'package:dattebayo/core/di/service_locator.dart';
+import 'package:dattebayo/features/tailed_beasts/presentation/bloc/tailed_beasts_bloc.dart';
+import 'package:dattebayo/features/tailed_beasts/presentation/widgets/tailed_beast_item_card.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+class TailedBeastsScreen extends StatefulWidget {
+  const TailedBeastsScreen({super.key});
+
+  @override
+  State<TailedBeastsScreen> createState() => _TailedBeastsScreenState();
+}
+
+class _TailedBeastsScreenState extends State<TailedBeastsScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) =>
+          serviceLocator<TailedBeastsBloc>()..add(GetTailedBeastsEvent()),
+      child: BlocBuilder<TailedBeastsBloc, TailedBeastsState>(
+        builder: (context, state) {
+          switch (state) {
+            case TailedBeastsLoading():
+              return Center(child: const CircularProgressIndicator());
+            case GetTailedBeastsSuccess(:final tailedBeasts):
+              return ListView.builder(
+                itemCount: tailedBeasts.length,
+                itemBuilder: (context, index) {
+                  final tailedBeast = tailedBeasts[index];
+                  return TailedBeastItemCard(tailedBeast: tailedBeast);
+                },
+              );
+            case TailedBeastsError(:final message):
+              return Center(
+                child: Text(
+                  message,
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+              );
+            default:
+              return const SizedBox.shrink();
+          }
+        },
+      ),
+    );
+  }
+}
