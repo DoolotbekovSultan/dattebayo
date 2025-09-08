@@ -2,7 +2,7 @@ import 'package:dattebayo/features/characters/domain/entities/character/componen
 import 'package:dattebayo/features/characters/domain/entities/character/components/personal/components/height.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/personal/components/weight.dart';
 
-class Personal {
+class CharacterPersonal {
   final String? birthdate;
   final String? sex;
   final Age? age;
@@ -18,7 +18,7 @@ class Personal {
   final String? clan;
   final List<String>? titles;
 
-  Personal({
+  CharacterPersonal({
     this.birthdate,
     this.sex,
     this.age,

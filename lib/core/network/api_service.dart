@@ -1,4 +1,4 @@
-import 'package:dattebayo/core/util/constants.dart';
+import 'package:dattebayo/core/utils/constants/url.dart';
 import 'package:dio/dio.dart';
 
 class ApiService {

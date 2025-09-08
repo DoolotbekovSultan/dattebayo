@@ -5,7 +5,6 @@ abstract class AppColors {
   Color get secondary;
   Color get background;
   Color get cardBackground;
-  Color get itemTitle;
   Color get textPrimary;
   Color get textSecondary;
   Color get error;

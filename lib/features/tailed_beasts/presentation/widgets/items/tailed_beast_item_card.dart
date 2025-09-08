@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:dattebayo/core/utils/constants/dimentions.dart';
 import 'package:dattebayo/features/tailed_beasts/domain/entities/tailed_beast.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +15,7 @@ class TailedBeastItemCard extends StatelessWidget {
         ? tailedBeast.images!.first
         : '';
     return Padding(
-      padding: EdgeInsets.all(8),
+      padding: EdgeInsets.all(Dimentions.paddingSmall),
       child: LayoutBuilder(
         builder: (context, constraints) {
           final availableWidth = constraints.maxWidth;
@@ -22,9 +25,10 @@ class TailedBeastItemCard extends StatelessWidget {
             child: Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(
+                    Dimentions.borderRadiusMedium,
+                  ),
+                  child: SizedBox(
                     width: availableWidth,
                     height: calculatedHeight,
                     child: Image.network(
@@ -35,17 +39,12 @@ class TailedBeastItemCard extends StatelessWidget {
                           child: Icon(
                             Icons.person,
                             size: calculatedHeight * 0.8,
-                            color: Colors.grey[400],
                           ),
                         ),
                       ),
                       loadingBuilder: (context, child, loadingProgress) {
                         if (loadingProgress == null) return child;
-                        return Center(
-                          child: CircularProgressIndicator(
-                            color: Colors.grey[400],
-                          ),
-                        );
+                        return Center(child: CircularProgressIndicator());
                       },
                     ),
                   ),
@@ -56,21 +55,27 @@ class TailedBeastItemCard extends StatelessWidget {
                   right: 0,
                   child: ClipRRect(
                     borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(8),
-                      bottomRight: Radius.circular(8),
+                      bottomLeft: Radius.circular(
+                        Dimentions.borderRadiusMedium,
+                      ),
+                      bottomRight: Radius.circular(
+                        Dimentions.borderRadiusMedium,
+                      ),
                     ),
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      // ignore: deprecated_member_use
-                      color: Colors.black.withOpacity(0.3),
-                      child: Text(
-                        tailedBeast.name ?? "Name error",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          decoration: TextDecoration.none,
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                      child: Container(
+                        padding: EdgeInsets.all(Dimentions.paddingSmall),
+                        color:
+                            (Theme.of(context).brightness == Brightness.light
+                                    ? Colors.white
+                                    : Colors.black)
+                                .withOpacity(0.3),
+                        child: Text(
+                          tailedBeast.name ?? "Name error",
+                          style: Theme.of(context).textTheme.displaySmall,
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),

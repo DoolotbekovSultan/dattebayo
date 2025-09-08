@@ -9,12 +9,12 @@ import 'package:dattebayo/features/characters/data/models/character/components/p
 import 'package:dattebayo/features/characters/data/models/character/components/rank/main/rank_model.dart';
 import 'package:dattebayo/features/characters/data/models/character/components/voice_actors/voice_actors_model.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/character.dart';
-import 'package:dattebayo/features/characters/domain/entities/character/components/family.dart';
+import 'package:dattebayo/features/characters/domain/entities/character/components/character_family.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/personal/components/age.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/personal/components/height.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/personal/components/weight.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/rank/components/ninja_rank.dart';
-import 'package:dattebayo/features/characters/domain/entities/character/components/personal/personal.dart';
+import 'package:dattebayo/features/characters/domain/entities/character/components/personal/character_personal.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/rank/rank.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/voice_actors.dart';
 
@@ -37,8 +37,8 @@ extension CharacterModelExtensions on CharacterModel {
 }
 
 extension FamilyModelExtensions on CharacterFamilyModel {
-  Family toEntity() {
-    return Family(
+  CharacterFamily toEntity() {
+    return CharacterFamily(
       father: father,
       mother: mother,
       son: son,
@@ -51,8 +51,8 @@ extension FamilyModelExtensions on CharacterFamilyModel {
 }
 
 extension PersonalModelExtensions on CharacterPersonalModel {
-  Personal toEntity() {
-    return Personal(
+  CharacterPersonal toEntity() {
+    return CharacterPersonal(
       birthdate: birthdate,
       sex: sex,
       age: age?.toEntity(),

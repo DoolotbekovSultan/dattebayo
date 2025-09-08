@@ -13,12 +13,12 @@ class AppTextStyles {
     displayMedium: TextStyle(
       fontSize: 28,
       fontWeight: FontWeight.bold,
-      color: AppColorsLight().textPrimary,
+      color: AppColorsLight().primary,
     ),
     displaySmall: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.bold,
-      color: AppColorsLight().itemTitle,
+      color: AppColorsLight().primary,
     ),
     titleLarge: TextStyle(
       fontSize: 22,
@@ -65,12 +65,12 @@ class AppTextStyles {
     displayMedium: TextStyle(
       fontSize: 28,
       fontWeight: FontWeight.bold,
-      color: AppColorsDark().textPrimary,
+      color: AppColorsDark().primary,
     ),
     displaySmall: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.bold,
-      color: AppColorsDark().textPrimary,
+      color: AppColorsDark().primary,
     ),
     titleLarge: TextStyle(
       fontSize: 22,

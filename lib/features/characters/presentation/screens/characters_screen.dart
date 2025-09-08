@@ -1,6 +1,7 @@
 import 'package:dattebayo/core/di/service_locator.dart';
+import 'package:dattebayo/core/utils/constants/dimentions.dart';
 import 'package:dattebayo/features/characters/presentation/bloc/characters_bloc.dart';
-import 'package:dattebayo/features/characters/presentation/widgets/character_item_%D1%81ard.dart';
+import 'package:dattebayo/features/characters/presentation/widgets/items/character_item_%D1%81ard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,12 +24,18 @@ class _CharacterScreenState extends State<CharactersScreen> {
             case CharactersLoading():
               return Center(child: const CircularProgressIndicator());
             case GetCharactersSuccess(:final characters):
-              return ListView.builder(
+              return ListView.separated(
                 itemCount: characters.length,
                 itemBuilder: (context, index) {
                   final character = characters[index];
                   return CharacterItemCard(character: character);
                 },
+                separatorBuilder: (context, index) => Padding(
+                  padding: EdgeInsetsGeometry.symmetric(
+                    horizontal: Dimentions.paddingMedium,
+                  ),
+                  child: Divider(thickness: Dimentions.dividerHeight),
+                ),
               );
             case CharactersError(:final message):
               return Center(

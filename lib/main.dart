@@ -1,4 +1,4 @@
-import 'package:dattebayo/bottom_navigation/bottom_navigaation_screen.dart';
+import 'package:dattebayo/bottom_navigation/bottom_navigation_screen.dart';
 import 'package:dattebayo/core/di/service_locator.dart';
 import 'package:dattebayo/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';

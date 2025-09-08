@@ -3,15 +3,13 @@ import 'package:flutter/material.dart';
 
 class AppColorsDark implements AppColors {
   @override
-  Color primary = const Color(0xFFFF6B00); // Оранжевый чакры Наруто
+  Color primary = const Color(0xFFFF7F19);
   @override
-  Color secondary = const Color(0xFFB71C1C); // Красный Акацки / Шаринган
+  Color secondary = const Color(0xFF1E3A8A); // Красный Акацки / Шаринган
   @override
   Color background = const Color(0xFF0D0D0D); // Очень тёмный фон (ночь)
   @override
   Color cardBackground = const Color(0xFF1A1A1A);
-  @override
-  Color itemTitle = const Color(0xFFFF6B00); // Карточки чуть светлее
   @override
   Color textPrimary = Colors.white; // Основной текст
   @override

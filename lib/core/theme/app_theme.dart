@@ -29,6 +29,11 @@ class AppTheme {
       elevation: 2,
       iconTheme: IconThemeData(color: AppColorsLight().icon),
     ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColorsLight().cardBackground,
+      selectedItemColor: AppColorsLight().primary,
+      unselectedItemColor: AppColorsLight().icon,
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColorsLight().primary,
@@ -109,6 +114,11 @@ class AppTheme {
     dividerTheme: DividerThemeData(
       color: AppColorsDark().divider,
       thickness: 1,
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColorsDark().cardBackground,
+      selectedItemColor: AppColorsDark().primary,
+      unselectedItemColor: AppColorsDark().icon,
     ),
     snackBarTheme: SnackBarThemeData(
       backgroundColor: AppColorsDark().cardBackground,

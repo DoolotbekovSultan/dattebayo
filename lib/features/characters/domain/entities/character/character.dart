@@ -1,6 +1,6 @@
 import 'package:dattebayo/features/characters/domain/entities/character/components/debut.dart';
-import 'package:dattebayo/features/characters/domain/entities/character/components/family.dart';
-import 'package:dattebayo/features/characters/domain/entities/character/components/personal/personal.dart';
+import 'package:dattebayo/features/characters/domain/entities/character/components/character_family.dart';
+import 'package:dattebayo/features/characters/domain/entities/character/components/personal/character_personal.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/rank/rank.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/voice_actors.dart';
 
@@ -9,10 +9,10 @@ class Character {
   final String? name;
   final List<String>? images;
   final Debut? debut;
-  final Family? family;
+  final CharacterFamily? family;
   final List<String>? jutsu;
   final List<String>? natureType;
-  final Personal? personal;
+  final CharacterPersonal? personal;
   final Rank? rank;
   final List<String>? tools;
   final VoiceActors? voiceActors;

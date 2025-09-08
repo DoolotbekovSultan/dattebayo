@@ -1,4 +1,4 @@
-class Family {
+class CharacterFamily {
   final String? father;
   final String? mother;
   final String? son;
@@ -7,7 +7,7 @@ class Family {
   final String? adoptiveSon;
   final String? godfather;
 
-  Family({
+  CharacterFamily({
     this.father,
     this.mother,
     this.son,
