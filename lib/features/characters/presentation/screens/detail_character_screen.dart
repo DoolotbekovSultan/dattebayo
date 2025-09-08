@@ -3,8 +3,8 @@ import 'package:dattebayo/core/utils/constants/dimentions.dart';
 import 'package:dattebayo/features/characters/presentation/bloc/characters_bloc.dart';
 import 'package:dattebayo/features/characters/presentation/widgets/detail_character/tabs/family/character_family_tab.dart';
 import 'package:dattebayo/features/characters/presentation/widgets/detail_character/tabs/info/character_info_tab.dart';
-import 'package:dattebayo/features/basic/presentation/widgets/tabs/jutsu_tab.dart';
-import 'package:dattebayo/features/characters/presentation/widgets/detail_character/tabs/nature/character_nature_tab.dart';
+import 'package:dattebayo/features/basic/presentation/widgets/tabs/jutsu/jutsu_tab.dart';
+import 'package:dattebayo/features/basic/presentation/widgets/tabs/nature/nature_tab.dart';
 import 'package:dattebayo/features/characters/presentation/widgets/detail_character/tabs/tools/character_tools_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -104,8 +104,10 @@ class DetailCharacterScreen extends StatelessWidget {
                                 ? [
                                     CharacterInfoTab(character: character),
                                     CharacterFamilyTab(character: character),
-                                    JutsuTab(character: character),
-                                    CharacterNatureTab(character: character),
+                                    JutsuTab(jutsuList: character.jutsu ?? []),
+                                    NatureTab(
+                                      natureType: character.natureType ?? [],
+                                    ),
                                     CharacterToolsTab(character: character),
                                   ]
                                 : [Center(child: Text("No data"))],

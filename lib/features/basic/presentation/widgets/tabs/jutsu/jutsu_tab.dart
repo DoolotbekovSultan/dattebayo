@@ -1,17 +1,14 @@
 import 'package:dattebayo/core/utils/constants/dimentions.dart';
-import 'package:dattebayo/features/characters/domain/entities/character/character.dart';
 import 'package:flutter/material.dart';
 
 class JutsuTab extends StatelessWidget {
-  final Character character;
+  final List<String> jutsuList;
 
-  const JutsuTab({super.key, required this.character});
+  const JutsuTab({super.key, required this.jutsuList});
 
   @override
   Widget build(BuildContext context) {
-    final jutsuList = character.jutsu;
-
-    if (jutsuList == null || jutsuList.isEmpty) {
+    if (jutsuList.isEmpty) {
       return const Center(child: Text("No Jutsu info available"));
     }
 
@@ -23,7 +20,7 @@ class JutsuTab extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(Dimentions.borderRadiusLarge),
           ),
-          elevation: 4,
+          elevation: Dimentions.elevationSmall,
           margin: const EdgeInsets.only(bottom: Dimentions.marginSM),
           child: Padding(
             padding: const EdgeInsets.all(Dimentions.paddingMedium),

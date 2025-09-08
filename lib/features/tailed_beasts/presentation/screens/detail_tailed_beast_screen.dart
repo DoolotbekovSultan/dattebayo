@@ -1,12 +1,11 @@
 import 'package:dattebayo/core/di/service_locator.dart';
 import 'package:dattebayo/core/utils/constants/dimentions.dart';
-import 'package:dattebayo/features/characters/presentation/bloc/characters_bloc.dart';
-import 'package:dattebayo/features/characters/presentation/widgets/detail_character/tabs/family/character_family_tab.dart';
-import 'package:dattebayo/features/characters/presentation/widgets/detail_character/tabs/info/character_info_tab.dart';
-import 'package:dattebayo/features/basic/presentation/widgets/tabs/jutsu_tab.dart';
-import 'package:dattebayo/features/characters/presentation/widgets/detail_character/tabs/nature/character_nature_tab.dart';
-import 'package:dattebayo/features/characters/presentation/widgets/detail_character/tabs/tools/character_tools_tab.dart';
+import 'package:dattebayo/features/basic/presentation/widgets/tabs/jutsu/jutsu_tab.dart';
+import 'package:dattebayo/features/basic/presentation/widgets/tabs/nature/nature_tab.dart';
 import 'package:dattebayo/features/tailed_beasts/presentation/bloc/tailed_beasts_bloc.dart';
+import 'package:dattebayo/features/tailed_beasts/presentation/widgets/detail_tailed_beast/tabs/family/tailed_beast_family_tab.dart';
+import 'package:dattebayo/features/tailed_beasts/presentation/widgets/detail_tailed_beast/tabs/info/tailed_beast_info_tab.dart';
+import 'package:dattebayo/features/tailed_beasts/presentation/widgets/detail_tailed_beast/tabs/unique_traints/tailed_beast_unique_traints_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -96,12 +95,30 @@ class DetailTailedBeastScreen extends StatelessWidget {
                             Tab(text: "Info"),
                             Tab(text: "Family"),
                             Tab(text: "Jutsu"),
+                            Tab(text: "Nature"),
                           ],
                         ),
                         Expanded(
                           child: TabBarView(
                             children: (tailedBeast != null)
-                                ? [] // TODO:
+                                ? [
+                                    TailedBeastInfoTab(
+                                      tailedBeast: tailedBeast,
+                                    ),
+                                    TailedBeastFamilyTab(
+                                      family: tailedBeast.family,
+                                    ),
+                                    JutsuTab(
+                                      jutsuList: tailedBeast.jutsu ?? [],
+                                    ),
+                                    NatureTab(
+                                      natureType: tailedBeast.natureType ?? [],
+                                    ),
+                                    TailedBeastUniqueTraintsTab(
+                                      uniqueTraints:
+                                          tailedBeast.uniqueTraits ?? [],
+                                    ),
+                                  ]
                                 : [Center(child: Text("No data"))],
                           ),
                         ),
@@ -110,7 +127,7 @@ class DetailTailedBeastScreen extends StatelessWidget {
                   ),
                 ),
               );
-            case CharactersError(:final message):
+            case TailedBeastsError(:final message):
               return Text(message);
             default:
               return const SizedBox.shrink();

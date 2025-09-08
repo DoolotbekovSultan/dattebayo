@@ -18,4 +18,6 @@ class Dimentions {
 
   static const double dividerHeight = 2.0;
   static const double silverAppBarHeight = 300;
+
+  static const double elevationSmall = 4;
 }

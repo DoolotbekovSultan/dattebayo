@@ -1,7 +1,7 @@
 import 'package:dattebayo/core/di/service_locator.dart';
 import 'package:dattebayo/core/utils/constants/dimentions.dart';
 import 'package:dattebayo/features/tailed_beasts/presentation/bloc/tailed_beasts_bloc.dart';
-import 'package:dattebayo/features/tailed_beasts/presentation/widgets/tailed_beast_item_card.dart';
+import 'package:dattebayo/features/tailed_beasts/presentation/widgets/items/tailed_beast_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,23 +1,20 @@
 import 'package:dattebayo/core/utils/constants/dimentions.dart';
-import 'package:dattebayo/features/characters/domain/entities/character/character.dart';
 import 'package:flutter/material.dart';
 
-class CharacterToolsTab extends StatelessWidget {
-  final Character character;
+class NatureTab extends StatelessWidget {
+  final List<String> natureType;
 
-  const CharacterToolsTab({super.key, required this.character});
+  const NatureTab({super.key, required this.natureType});
 
   @override
   Widget build(BuildContext context) {
-    final toolsList = character.tools;
-
-    if (toolsList == null || toolsList.isEmpty) {
-      return const Center(child: Text("No Tools info available"));
+    if (natureType.isEmpty) {
+      return const Center(child: Text("No Nature info available"));
     }
 
     return ListView.builder(
       padding: const EdgeInsets.all(Dimentions.paddingMedium),
-      itemCount: toolsList.length,
+      itemCount: natureType.length,
       itemBuilder: (context, index) {
         return Card(
           shape: RoundedRectangleBorder(
@@ -28,7 +25,7 @@ class CharacterToolsTab extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(Dimentions.paddingMedium),
             child: Text(
-              toolsList[index],
+              natureType[index],
               style: Theme.of(context).textTheme.bodyLarge,
             ),
           ),
