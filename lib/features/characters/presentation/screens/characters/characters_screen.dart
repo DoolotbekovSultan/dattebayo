@@ -29,23 +29,21 @@ class _CharacterScreenState extends State<CharactersScreen> {
       value: _bloc,
       child: Stack(
         children: [
-          Expanded(
-            child: BlocBuilder<CharactersBloc, CharactersState>(
-              builder: (context, state) {
-                switch (state) {
-                  case CharactersLoading():
-                    return const Center(child: CircularProgressIndicator());
-                  case GetCharactersSuccess(:final characters):
-                    return ItemsList(entities: characters);
-                  case CharactersError(:final message):
-                    return Center(
-                      child: Text(message, style: ConstantAppTextStyles.error),
-                    );
-                  default:
-                    return const SizedBox.shrink();
-                }
-              },
-            ),
+          BlocBuilder<CharactersBloc, CharactersState>(
+            builder: (context, state) {
+              switch (state) {
+                case CharactersLoading():
+                  return const Center(child: CircularProgressIndicator());
+                case GetCharactersSuccess(:final characters):
+                  return ItemsList(entities: characters);
+                case CharactersError(:final message):
+                  return Center(
+                    child: Text(message, style: ConstantAppTextStyles.error),
+                  );
+                default:
+                  return const SizedBox.shrink();
+              }
+            },
           ),
 
           Builder(
