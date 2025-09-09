@@ -1,5 +1,5 @@
 import 'package:dattebayo/features/basic/data/models/components/debut/debut_model.dart';
-import 'package:dattebayo/features/characters/domain/entities/character/components/debut.dart';
+import 'package:dattebayo/features/basic/domain/entities/components/debut/debut.dart';
 
 extension DebutModelExtensions on DebutModel {
   Debut toEntity() {

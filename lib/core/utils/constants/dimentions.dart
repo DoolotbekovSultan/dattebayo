@@ -20,4 +20,5 @@ class Dimentions {
   static const double silverAppBarHeight = 300;
 
   static const double elevationSmall = 4;
+  static const double searchHeight = 70;
 }

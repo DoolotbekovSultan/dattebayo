@@ -1,4 +1,4 @@
-import 'package:dattebayo/features/basic/presentation/widgets/tabs/components/tab_helpers/selection_card.dart';
+import 'package:dattebayo/features/basic/presentation/widgets/detail_entity/tabs/components/tab_helpers/section_card.dart';
 import 'package:dattebayo/features/tailed_beasts/domain/entities/components/tailed_beast_personal.dart';
 import 'package:flutter/material.dart';
 

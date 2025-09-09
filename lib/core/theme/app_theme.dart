@@ -1,7 +1,7 @@
-import 'package:dattebayo/core/theme/app_colors/app_colors_dark.dart';
-import 'package:dattebayo/core/theme/app_colors/app_colors_light.dart';
+import 'package:dattebayo/core/theme/app_colors/impl/app_colors_dark.dart';
+import 'package:dattebayo/core/theme/app_colors/impl/app_colors_light.dart';
 import 'package:flutter/material.dart';
-import 'app_text_styles.dart';
+import 'text_styles/app_text_styles.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(

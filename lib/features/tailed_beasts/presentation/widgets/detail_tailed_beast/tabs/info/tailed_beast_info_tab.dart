@@ -1,5 +1,5 @@
 import 'package:dattebayo/core/utils/constants/dimentions.dart';
-import 'package:dattebayo/features/basic/presentation/widgets/tabs/components/sections/debut_tab_section_card.dart';
+import 'package:dattebayo/features/basic/presentation/widgets/detail_entity/tabs/components/sections/debut_tab_section_card.dart';
 import 'package:dattebayo/features/tailed_beasts/domain/entities/tailed_beast.dart';
 import 'package:dattebayo/features/tailed_beasts/presentation/widgets/detail_tailed_beast/tabs/info/sections/personal/tailed_beast_info_tab_personal_section.dart';
 import 'package:flutter/material.dart';

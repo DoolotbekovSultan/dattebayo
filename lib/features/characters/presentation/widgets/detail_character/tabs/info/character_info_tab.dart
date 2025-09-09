@@ -1,5 +1,5 @@
 import 'package:dattebayo/core/utils/constants/dimentions.dart';
-import 'package:dattebayo/features/basic/presentation/widgets/tabs/components/sections/debut_tab_section_card.dart';
+import 'package:dattebayo/features/basic/presentation/widgets/detail_entity/tabs/components/sections/debut_tab_section_card.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/character.dart';
 import 'package:dattebayo/features/characters/presentation/widgets/detail_character/tabs/info/sections/character_info_tab_personal_section.dart';
 import 'package:dattebayo/features/characters/presentation/widgets/detail_character/tabs/info/sections/character_info_tab_rank_section.dart';

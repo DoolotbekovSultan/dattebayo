@@ -1,5 +1,5 @@
-import 'package:dattebayo/features/characters/domain/entities/character/components/debut.dart';
-import 'package:dattebayo/features/characters/domain/entities/character/components/character_family.dart';
+import 'package:dattebayo/features/basic/domain/entities/components/debut/debut.dart';
+import 'package:dattebayo/features/characters/domain/entities/character/components/family/character_family.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/personal/character_personal.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/rank/rank.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/voice_actors.dart';

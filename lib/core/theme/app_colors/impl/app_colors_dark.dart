@@ -1,0 +1,30 @@
+import 'package:dattebayo/core/theme/app_colors/interface/app_colors.dart';
+import 'package:dattebayo/core/theme/app_colors/constant/constant_app_colors.dart';
+import 'package:flutter/material.dart';
+
+class AppColorsDark implements AppColors {
+  @override
+  Color primary = ConstantAppColors.narutoColor;
+  @override
+  Color secondary = const Color(0xFF1E3A8A); // Красный Акацки / Шаринган
+  @override
+  Color background = const Color(0xFF0D0D0D); // Очень тёмный фон (ночь)
+  @override
+  Color cardBackground = const Color(0xFF1A1A1A);
+  @override
+  Color textPrimary = Colors.white; // Основной текст
+  @override
+  Color textSecondary = Colors.grey[400]!; // Второстепенный текст
+  @override
+  Color error = const Color(0xFFD32F2F); // Ошибки (опасность, кровь)
+  @override
+  Color success = const Color(0xFF2E7D32); // Успех (лес Конохи)
+  @override
+  Color warning = const Color(0xFFFFC107); // Предупреждение (Курама)
+  @override
+  Color icon = Colors.white70; // Иконки не яркие, чтобы не мешали
+  @override
+  Color divider = Colors.grey[700]!; // Лёгкие линии-разделители
+  @override
+  Color overlay = Colors.white10; // Лёгкая дымка для оверлеев
+}

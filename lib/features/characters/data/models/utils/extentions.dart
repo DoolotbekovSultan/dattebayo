@@ -9,7 +9,7 @@ import 'package:dattebayo/features/characters/data/models/character/components/p
 import 'package:dattebayo/features/characters/data/models/character/components/rank/main/rank_model.dart';
 import 'package:dattebayo/features/characters/data/models/character/components/voice_actors/voice_actors_model.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/character.dart';
-import 'package:dattebayo/features/characters/domain/entities/character/components/character_family.dart';
+import 'package:dattebayo/features/characters/domain/entities/character/components/family/character_family.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/personal/components/age.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/personal/components/height.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/components/personal/components/weight.dart';

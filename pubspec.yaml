@@ -39,6 +39,7 @@ dependencies:
   bloc: ^9.0.0
   flutter_bloc: ^9.1.1
   get_it: ^8.2.0
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +64,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+      - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
