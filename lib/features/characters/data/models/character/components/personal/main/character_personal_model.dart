@@ -1,37 +1,54 @@
+import 'package:dattebayo/features/basic/data/datasources/local/hive_type_id.dart';
 import 'package:dattebayo/features/characters/data/models/character/components/personal/components/age/age_model.dart';
 import 'package:dattebayo/features/characters/data/models/character/components/personal/components/height/height_model.dart';
 import 'package:dattebayo/features/characters/data/models/character/components/personal/components/weight/weight_model.dart';
 import 'package:dattebayo/features/basic/data/models/utils/functions.dart';
+import 'package:hive/hive.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 
 part 'character_personal_model.g.dart';
 
+@HiveType(typeId: HiveTypeId.characterPersonalModel)
 @JsonSerializable(explicitToJson: true)
-class CharacterPersonalModel {
+class CharacterPersonalModel extends HiveObject {
+  @HiveField(0)
   @JsonKey(fromJson: stringFromJson)
   final String? birthdate;
+  @HiveField(1)
   @JsonKey(fromJson: stringFromJson)
   final String? sex;
+  @HiveField(2)
   final AgeModel? age;
+  @HiveField(3)
   final HeightModel? height;
+  @HiveField(4)
   final WeightModel? weight;
+  @HiveField(5)
   @JsonKey(fromJson: stringFromJson)
   final String? bloodType;
+  @HiveField(6)
   @JsonKey(fromJson: listFromJson, toJson: listToJson)
   final List<String>? kekkeiGenkai;
+  @HiveField(7)
   @JsonKey(fromJson: listFromJson, toJson: listToJson)
   final List<String>? classification;
+  @HiveField(8)
   @JsonKey(fromJson: stringFromJson)
   final String? tailedBeast;
+  @HiveField(9)
   @JsonKey(fromJson: listFromJson, toJson: listToJson)
   final List<String>? occupation;
+  @HiveField(10)
   @JsonKey(fromJson: listFromJson, toJson: listToJson)
   final List<String>? affiliation;
+  @HiveField(11)
   @JsonKey(fromJson: listFromJson, toJson: listToJson)
   final List<String>? team;
+  @HiveField(12)
   @JsonKey(fromJson: stringFromJson)
   final String? clan;
+  @HiveField(13)
   @JsonKey(fromJson: listFromJson, toJson: listToJson)
   final List<String>? titles;
 

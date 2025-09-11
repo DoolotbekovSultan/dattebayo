@@ -1,5 +1,5 @@
 import 'package:dattebayo/features/basic/presentation/widgets/detail_entity/tabs/components/tab_helpers/section_card.dart';
-import 'package:dattebayo/features/basic/domain/entities/components/debut/debut.dart';
+import 'package:dattebayo/features/basic/domain/entities/components/debut.dart';
 import 'package:flutter/material.dart';
 
 class DebutTabSectionCard extends StatelessWidget {

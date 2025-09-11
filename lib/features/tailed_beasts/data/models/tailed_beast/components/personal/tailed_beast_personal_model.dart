@@ -1,18 +1,26 @@
+import 'package:dattebayo/features/basic/data/datasources/local/hive_type_id.dart';
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:dattebayo/features/basic/data/models/utils/functions.dart';
 
 part 'tailed_beast_personal_model.g.dart';
 
+@HiveType(typeId: HiveTypeId.tailedBeastPersonalModel)
 @JsonSerializable()
-class TailedBeastPersonalModel {
+class TailedBeastPersonalModel extends HiveObject {
+  @HiveField(0)
   @JsonKey(fromJson: stringFromJson)
   final String? status;
+  @HiveField(1)
   @JsonKey(fromJson: listFromJson, toJson: listToJson)
   final List<String>? kekkeiGenkai;
+  @HiveField(2)
   @JsonKey(fromJson: stringFromJson)
   final String? classification;
+  @HiveField(3)
   @JsonKey(fromJson: listFromJson, toJson: listToJson)
   final List<String>? jinchuriki;
+  @HiveField(4)
   @JsonKey(fromJson: listFromJson, toJson: listToJson)
   final List<String>? titles;
 

@@ -1,4 +1,4 @@
-import 'package:dattebayo/features/basic/domain/entities/components/debut/debut.dart';
+import 'package:dattebayo/features/basic/domain/entities/components/debut.dart';
 import 'package:dattebayo/features/tailed_beasts/domain/entities/components/tailed_beast_family.dart';
 import 'package:dattebayo/features/tailed_beasts/domain/entities/components/tailed_beast_personal.dart';
 

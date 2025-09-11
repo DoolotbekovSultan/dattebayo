@@ -1,15 +1,25 @@
+import 'package:dattebayo/features/basic/data/datasources/local/hive_type_id.dart';
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'character_family_model.g.dart';
 
+@HiveType(typeId: HiveTypeId.characterFamilyModel)
 @JsonSerializable()
-class CharacterFamilyModel {
+class CharacterFamilyModel extends HiveObject {
+  @HiveField(0)
   final String? father;
+  @HiveField(1)
   final String? mother;
+  @HiveField(2)
   final String? son;
+  @HiveField(3)
   final String? daughter;
+  @HiveField(4)
   final String? wife;
+  @HiveField(5)
   final String? adoptiveSon;
+  @HiveField(6)
   final String? godfather;
 
   CharacterFamilyModel({

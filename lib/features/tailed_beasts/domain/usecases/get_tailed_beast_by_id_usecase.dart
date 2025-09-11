@@ -1,10 +1,10 @@
+import 'package:dattebayo/features/basic/domain/repositories/repository.dart';
 import 'package:dattebayo/features/tailed_beasts/domain/entities/tailed_beast.dart';
-import 'package:dattebayo/features/tailed_beasts/domain/repositories/tailed_beasts_repository.dart';
 
 class GetTailedBeastByIdUsecase {
-  final TailedBeastsRepository repository;
+  final Repository<TailedBeast> repository;
   GetTailedBeastByIdUsecase({required this.repository});
 
   Future<TailedBeast?> call({required id}) async =>
-      await repository.getTailedBeastByID(id: id);
+      await repository.getEntityById(id: id);
 }

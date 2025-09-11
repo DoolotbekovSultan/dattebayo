@@ -1,15 +1,25 @@
+import 'package:dattebayo/features/basic/data/datasources/local/hive_type_id.dart';
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'debut_model.g.dart';
 
+@HiveType(typeId: HiveTypeId.debut)
 @JsonSerializable()
 class DebutModel {
+  @HiveField(0)
   final String? manga;
+  @HiveField(1)
   final String? anime;
+  @HiveField(2)
   final String? novel;
+  @HiveField(3)
   final String? movie;
+  @HiveField(4)
   final String? game;
+  @HiveField(5)
   final String? ova;
+  @HiveField(6)
   final String? appearsIn;
 
   DebutModel({

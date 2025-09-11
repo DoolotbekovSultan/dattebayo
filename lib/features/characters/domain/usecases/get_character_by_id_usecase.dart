@@ -1,11 +1,11 @@
 import 'package:dattebayo/features/characters/domain/entities/character/character.dart';
-import 'package:dattebayo/features/characters/domain/repositories/characters_repository.dart';
+import 'package:dattebayo/features/basic/domain/repositories/repository.dart';
 
 class GetCharacterByIdUsecase {
-  final CharactersRepository repository;
+  final Repository<Character> repository;
   GetCharacterByIdUsecase({required this.repository});
 
   Future<Character?> call({required int id}) async {
-    return await repository.getCharacterById(id: id);
+    return await repository.getEntityById(id: id);
   }
 }

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-class BaseDatasources {
+class BaseRemoteDatasource {
   Future<Model> getModelData<Model>(
     Future<Response> futureResponse,
     Model Function(dynamic data) fromJson,

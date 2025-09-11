@@ -1,24 +1,38 @@
+import 'package:dattebayo/features/basic/data/datasources/local/hive_type_id.dart';
 import 'package:dattebayo/features/basic/data/models/components/debut/debut_model.dart';
 import 'package:dattebayo/features/characters/data/models/character/components/family/character_family_model.dart';
 import 'package:dattebayo/features/characters/data/models/character/components/personal/main/character_personal_model.dart';
 import 'package:dattebayo/features/characters/data/models/character/components/rank/main/rank_model.dart';
 import 'package:dattebayo/features/characters/data/models/character/components/voice_actors/voice_actors_model.dart';
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'character_model.g.dart';
 
+@HiveType(typeId: HiveTypeId.characterModel)
 @JsonSerializable(explicitToJson: true)
-class CharacterModel {
+class CharacterModel extends HiveObject {
+  @HiveField(0)
   final int? id;
+  @HiveField(1)
   final String? name;
+  @HiveField(2)
   final List<String>? images;
+  @HiveField(3)
   final DebutModel? debut;
+  @HiveField(4)
   final CharacterFamilyModel? family;
+  @HiveField(5)
   final List<String>? jutsu;
+  @HiveField(6)
   final List<String>? natureType;
+  @HiveField(7)
   final CharacterPersonalModel? personal;
+  @HiveField(8)
   final RankModel? rank;
+  @HiveField(9)
   final List<String>? tools;
+  @HiveField(10)
   final VoiceActorsModel? voiceActors;
 
   CharacterModel({
