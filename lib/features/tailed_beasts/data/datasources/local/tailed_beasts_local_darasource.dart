@@ -13,6 +13,13 @@ class TailedBeastLocalDatasourceImpl
   }
 
   @override
+  Future<void> casheModels({required List<TailedBeastModel> models}) async {
+    for (var model in models) {
+      casheModel(model: model);
+    }
+  }
+
+  @override
   Future<TailedBeastModel?> getModelById({required int id}) async {
     final box = await openBox();
     return box.get(id.toString());

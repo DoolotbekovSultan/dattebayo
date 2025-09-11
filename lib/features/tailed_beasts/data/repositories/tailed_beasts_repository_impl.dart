@@ -19,17 +19,25 @@ class TailedBeastsRepositoryImpl extends BaseRepository
   @override
   Future<List<TailedBeast>> getEntities({String? name}) async {
     final models = await getModelData<List<TailedBeastModel>>(
-      () => routeDatasource.getModels(name: name),
-      () => localDatasource.getModels(name: name),
+      route: () => routeDatasource.getModels(name: name),
+      local: () => localDatasource.getModels(name: name),
+      casheModelData: (models) {
+        localDatasource.casheModels(models: models);
+      },
     );
     return models.toEntities();
   }
 
   @override
   Future<TailedBeast?> getEntityById({required int id}) async {
-    final model = await getModelData(
-      () => routeDatasource.getModelById(id: id),
-      () => localDatasource.getModelById(id: id),
+    final model = await getModelData<TailedBeastModel?>(
+      route: () => routeDatasource.getModelById(id: id),
+      local: () => localDatasource.getModelById(id: id),
+      casheModelData: (model) {
+        if (model != null) {
+          localDatasource.casheModel(model: model);
+        }
+      },
     );
     return model?.toEntity();
   }

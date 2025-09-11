@@ -1,5 +1,5 @@
 import 'package:dattebayo/core/utils/constants/dimentions.dart';
-import 'package:dattebayo/features/basic/presentation/widgets/entities/item_card/item_%D1%81ard.dart';
+import 'package:dattebayo/features/basic/presentation/widgets/entities/item_card/item_card.dart';
 import 'package:flutter/material.dart';
 
 class ItemsList<Entity> extends StatelessWidget {

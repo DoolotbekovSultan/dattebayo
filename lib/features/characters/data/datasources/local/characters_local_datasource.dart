@@ -12,6 +12,13 @@ class CharactersLocalDatasourceImpl implements LocalDatasource<CharacterModel> {
   }
 
   @override
+  Future<void> casheModels({required List<CharacterModel> models}) async {
+    for (var model in models) {
+      casheModel(model: model);
+    }
+  }
+
+  @override
   Future<CharacterModel?> getModelById({required int id}) async {
     final box = await openBox();
     return box.get(id.toString());

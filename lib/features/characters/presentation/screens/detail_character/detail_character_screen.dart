@@ -10,6 +10,7 @@ import 'package:dattebayo/features/basic/presentation/widgets/detail_entity/tabs
 import 'package:dattebayo/features/characters/presentation/widgets/detail_character/tabs/tools/character_tools_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class DetailCharacterScreen extends StatelessWidget {
   final int? id;
@@ -51,8 +52,10 @@ class DetailCharacterScreen extends StatelessWidget {
                                     (character != null &&
                                         character.images != null)
                                     ? (character.images!.map(
-                                        (url) => Image.network(
-                                          url,
+                                        (url) => Image(
+                                          image: CachedNetworkImageProvider(
+                                            url,
+                                          ),
                                           fit: BoxFit.cover,
                                           errorBuilder:
                                               (

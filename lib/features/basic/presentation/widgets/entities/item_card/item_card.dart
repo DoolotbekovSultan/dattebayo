@@ -4,7 +4,9 @@ import 'package:dattebayo/core/utils/constants/dimentions.dart';
 import 'package:dattebayo/features/characters/domain/entities/character/character.dart';
 import 'package:dattebayo/features/characters/presentation/screens/detail_character/detail_character_screen.dart';
 import 'package:dattebayo/features/tailed_beasts/domain/entities/tailed_beast.dart';
+import 'package:dattebayo/features/tailed_beasts/presentation/screens/detail_tailed_beast/detail_tailed_beast_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class ItemCard<Entity> extends StatelessWidget {
   final Entity entityGet;
@@ -13,6 +15,7 @@ class ItemCard<Entity> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     late dynamic entity;
+
     if (entityGet is Character) {
       entity = entityGet as Character;
     } else if (entityGet is TailedBeast) {
@@ -23,12 +26,14 @@ class ItemCard<Entity> extends StatelessWidget {
         : '';
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => DetailCharacterScreen(id: entity.id),
-          ),
-        );
+        final route = (entityGet is Character)
+            ? MaterialPageRoute(
+                builder: (context) => DetailCharacterScreen(id: entity.id),
+              )
+            : MaterialPageRoute(
+                builder: (context) => DetailTailedBeastScreen(id: entity.id),
+              );
+        Navigator.push(context, route);
       },
       child: Padding(
         padding: EdgeInsets.all(Dimentions.paddingSmall),
@@ -47,8 +52,8 @@ class ItemCard<Entity> extends StatelessWidget {
                     child: SizedBox(
                       width: availableWidth,
                       height: calculatedHeight,
-                      child: Image.network(
-                        imageUrl,
+                      child: Image(
+                        image: CachedNetworkImageProvider(imageUrl),
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) => Center(
                           child: Center(

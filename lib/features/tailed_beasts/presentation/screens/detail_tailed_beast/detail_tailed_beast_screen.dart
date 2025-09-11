@@ -10,6 +10,7 @@ import 'package:dattebayo/features/tailed_beasts/presentation/widgets/detail_tai
 import 'package:dattebayo/features/tailed_beasts/presentation/widgets/detail_tailed_beast/tabs/unique_traints/tailed_beast_unique_traints_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class DetailTailedBeastScreen extends StatelessWidget {
   final int? id;
@@ -51,8 +52,10 @@ class DetailTailedBeastScreen extends StatelessWidget {
                                     (tailedBeast != null &&
                                         tailedBeast.images != null)
                                     ? (tailedBeast.images!.map(
-                                        (url) => Image.network(
-                                          url,
+                                        (url) => Image(
+                                          image: CachedNetworkImageProvider(
+                                            url,
+                                          ),
                                           fit: BoxFit.cover,
                                           errorBuilder:
                                               (
@@ -107,6 +110,7 @@ class DetailTailedBeastScreen extends StatelessWidget {
                                 Tab(text: "Family"),
                                 Tab(text: "Jutsu"),
                                 Tab(text: "Nature"),
+                                Tab(text: "UniqueTraints"),
                               ],
                             ),
                             Expanded(
