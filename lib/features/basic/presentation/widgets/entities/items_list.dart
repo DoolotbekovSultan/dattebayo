@@ -8,19 +8,29 @@ class ItemsList<Entity> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
+    return ReorderableListView.builder(
       padding: EdgeInsets.only(top: Dimentions.searchHeight),
       itemCount: entities.length,
       itemBuilder: (context, index) {
         final entity = entities[index];
-        return ItemCard<Entity>(entityGet: entity);
+        return Column(
+          key: ValueKey(entity),
+          children: [
+            ItemCard<Entity>(entityGet: entity),
+            if (index < entities.length - 1)
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: Dimentions.paddingMedium,
+                ),
+                child: Divider(thickness: Dimentions.dividerHeight),
+              ),
+          ],
+        );
       },
-      separatorBuilder: (context, index) => Padding(
-        padding: EdgeInsetsGeometry.symmetric(
-          horizontal: Dimentions.paddingMedium,
-        ),
-        child: Divider(thickness: Dimentions.dividerHeight),
-      ),
+      onReorder: (oldIndex, newIndex) {
+        final removedEntity = entities.removeAt(oldIndex);
+        entities.insert(newIndex, removedEntity);
+      },
     );
   }
 }
