@@ -28,8 +28,9 @@ class ItemsList<Entity> extends StatelessWidget {
         );
       },
       onReorder: (oldIndex, newIndex) {
-        final removedEntity = entities.removeAt(oldIndex);
-        entities.insert(newIndex, removedEntity);
+        final entity = entities[oldIndex];
+        entities.insert(newIndex, entity);
+        entities.removeAt(oldIndex);
       },
     );
   }
